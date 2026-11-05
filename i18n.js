@@ -1,0 +1,33 @@
+'use strict';
+window.I18N = {
+  en: {
+    switchTo: 'TR', switchLabel: 'Türkçe\'ye geç',
+    intro: 'Generate and verify bcrypt hashes. Everything runs in your browser, no data is sent.',
+    genTitle: 'Generate', text: 'Text', show: 'Show', hide: 'Hide',
+    rounds: 'Rounds (4–15)', dec: 'Decrease rounds', inc: 'Increase rounds',
+    genBtn: 'Generate Hash', busy: 'Calculating...', result: 'Result', copy: 'Copy',
+    verTitle: 'Verify', hash: 'Bcrypt hash', original: 'Original text', verBtn: 'Verify',
+    weak: 'Weak: not recommended for production.', mid: 'Moderate.',
+    ok: 'Suitable for production.', slow: 'Suitable for production, but may be slow.',
+    bytes: (n) => `Warning: input is ${n} bytes. bcrypt only uses the first 72 bytes, the rest is ignored.`,
+    empty: 'Text is empty.', copied: 'Copied.',
+    noClip: 'No clipboard access; text selected, copy it manually.',
+    badFormat: 'Invalid bcrypt hash format.', match: 'Match ✓', noMatch: 'No match ✗',
+    error: (m) => `Error: ${m}`,
+  },
+  tr: {
+    switchTo: 'EN', switchLabel: 'Switch to English',
+    intro: 'Bcrypt hash üret ve doğrula. Tüm işlemler tarayıcınızda yapılır, veri gönderilmez.',
+    genTitle: 'Üret', text: 'Metin', show: 'Göster', hide: 'Gizle',
+    rounds: 'Rounds (4–15)', dec: 'Rounds azalt', inc: 'Rounds artır',
+    genBtn: 'Hash Üret', busy: 'Hesaplanıyor...', result: 'Sonuç', copy: 'Kopyala',
+    verTitle: 'Doğrula', hash: 'Bcrypt hash', original: 'Orijinal metin', verBtn: 'Doğrula',
+    weak: 'Zayıf: production için önerilmez.', mid: 'Orta.',
+    ok: 'Production için uygun.', slow: 'Production için uygun, ancak yavaş olabilir.',
+    bytes: (n) => `Uyarı: girdi ${n} byte. bcrypt yalnızca ilk 72 byte'ı kullanır, kalanı yok sayılır.`,
+    empty: 'Metin boş.', copied: 'Kopyalandı.',
+    noClip: 'Pano erişimi yok; metin seçildi, elle kopyalayın.',
+    badFormat: 'Geçersiz bcrypt hash formatı.', match: 'Eşleşiyor ✓', noMatch: 'Eşleşmiyor ✗',
+    error: (m) => `Hata: ${m}`,
+  },
+};

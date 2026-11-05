@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>crypter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>&gt; crypter<span class="cursor">_</span></h1>
+      <button id="lang-btn" type="button" data-i18n="switchTo" aria-label="Türkçe'ye geç">TR</button>
+    </header>
+    <p class="note" data-i18n="intro">Generate and verify bcrypt hashes. Everything runs in your browser, no data is sent.</p>
+
+    <section class="card" aria-labelledby="gen-title">
+      <h2 id="gen-title" data-i18n="genTitle">Generate</h2>
+
+      <label for="gen-text" data-i18n="text">Text</label>
+      <div class="row">
+        <input id="gen-text" type="password" autocomplete="off" spellcheck="false" autocapitalize="off">
+        <button id="gen-toggle" type="button" aria-controls="gen-text" aria-pressed="false">Show</button>
+      </div>
+      <p id="gen-bytes" class="warn" hidden></p>
+
+      <label for="rounds" data-i18n="rounds">Rounds (4–15)</label>
+      <div class="row">
+        <button id="rounds-dec" type="button" data-i18n-aria="dec" aria-label="Decrease rounds">−</button>
+        <input id="rounds" type="number" min="4" max="15" step="1" value="12" autocomplete="off" spellcheck="false" autocapitalize="off" aria-describedby="rounds-hint">
+        <button id="rounds-inc" type="button" data-i18n-aria="inc" aria-label="Increase rounds">+</button>
+      </div>
+      <p id="rounds-hint" class="hint"></p>
+
+      <button id="gen-btn" type="button" class="primary">Generate Hash</button>
+
+      <label for="gen-out" data-i18n="result">Result</label>
+      <div class="row">
+        <input id="gen-out" class="mono" type="text" readonly autocomplete="off" spellcheck="false" autocapitalize="off">
+        <button id="copy-btn" type="button" data-i18n="copy">Copy</button>
+      </div>
+      <p id="gen-msg" class="hint" role="status"></p>
+    </section>
+
+    <section class="card" aria-labelledby="ver-title">
+      <h2 id="ver-title" data-i18n="verTitle">Verify</h2>
+
+      <label for="ver-hash" data-i18n="hash">Bcrypt hash</label>
+      <input id="ver-hash" class="mono" type="text" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="$2b$12$...">
+
+      <label for="ver-text" data-i18n="original">Original text</label>
+      <input id="ver-text" type="password" autocomplete="off" spellcheck="false" autocapitalize="off">
+      <p id="ver-bytes" class="warn" hidden></p>
+
+      <button id="ver-btn" type="button" class="primary">Verify</button>
+      <p id="ver-msg" class="result" role="status"></p>
+    </section>
+  </main>
+  <script src="vendor/bcrypt.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

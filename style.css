@@ -1,0 +1,85 @@
+:root {
+  --bg: #0d0d0d;
+  --card: #171717;
+  --border: #2a2a2a;
+  --text: #e5e5e5;
+  --muted: #8a8a8a;
+  --accent: #22c55e;
+  --warn: #eab308;
+  --bad: #ef4444;
+  --font: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 var(--font);
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+header { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 4px; }
+h1 { margin: 0; font-size: 1.6rem; color: var(--accent); }
+#lang-btn { padding: 4px 10px; font-size: .8rem; }
+h2 { margin: 0 0 12px; font-size: 1.1rem; }
+.cursor { opacity: .7; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+label { display: block; margin: 14px 0 6px; color: var(--muted); font-size: .9rem; }
+
+.row { display: flex; gap: 8px; }
+.row input { flex: 1; min-width: 0; }
+
+input, button {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 12px;
+}
+
+input[type="number"] { text-align: center; }
+input[readonly] { color: var(--accent); }
+.card > input { width: 100%; }
+.mono { font-family: var(--font); font-size: .85rem; }
+
+button { cursor: pointer; white-space: nowrap; }
+button:hover { border-color: var(--accent); }
+button:disabled { opacity: .5; cursor: wait; }
+
+.primary {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0d0d0d;
+  font-weight: 700;
+}
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.note, .hint { color: var(--muted); font-size: .85rem; margin: 6px 0 0; }
+.warn { color: var(--warn); font-size: .85rem; margin: 6px 0 0; }
+.hint.weak { color: var(--bad); }
+.hint.mid { color: var(--warn); }
+.hint.ok { color: var(--accent); }
+
+.result { margin: 12px 0 0; font-weight: 700; min-height: 1.5em; }
+.result.ok { color: var(--accent); }
+.result.bad { color: var(--bad); }
